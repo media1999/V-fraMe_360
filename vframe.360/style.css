@@ -1,0 +1,609 @@
+:root {
+    --bg-color: #050505;
+    --accent: #ff3366; /* Vibrant neon accent */
+    --accent-glow: rgba(255, 51, 102, 0.4);
+    --glass-bg: rgba(20, 20, 20, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Playwrite NZ', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Mouse Tracker Color Flow */
+.cursor-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: width 0.2s, height 0.2s;
+}
+
+/* Header & Glassmorphism */
+
+header {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 40px;
+    z-index: 1000;
+}
+.nav-logo { height: 100px; object-fit: contain; }
+.nav-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 10px 30px;
+    border-radius: 20px;
+    display: flex; gap: 100px; align-items: center;
+}
+.nav-glass button {
+    background: none; border: none; color: white;
+    font-family: 'Playwrite NZ', sans-serif;
+    font-size: 14px; font-weight: 700; cursor: pointer;
+    display: flex; align-items: center; gap: 100px;
+    transition: 0.3s;
+}
+.nav-glass button:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+.btn-icon { height: 40px; }
+
+/* Scroll Animations (JS triggers this) */
+.hidden-elem { opacity: 0; transform: translateY(50px); transition: all 1s ease-out; }
+.show-elem { opacity: 1; transform: translateY(0); }
+
+/* Session 1: Hero */
+.session-1 { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; }
+#bg-video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.video-overlay { position: absolute; width: 100%; height: 100%; }
+  /* {  background: rgba(0,0,0,0.6); z-index: -1; } */
+.hero-content { text-align: center; }
+.big-title { font-family: 'Playwrite NZ', sans-serif; font-size: 8vw; letter-spacing: 5px; text-transform: uppercase; }
+.hero-tag {
+    position: absolute; bottom: 100px; right: 100px;
+    font-size: 2rem; font-family: 'Playwrite NZ', sans-serif;
+    color: var(--accent);
+    animation: pulse 2s infinite;
+}
+
+/* Session 2: Services */
+/* Session 2: Services */
+/* I added a fallback color for var(--accent) just in case it isn't defined globally */
+:root {
+    --accent: #ff4d6d;
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+.session-2 { 
+    padding: 100px 5vw; 
+    background-color: #000; /* Added so you can see the white text */
+}
+
+.section-title { 
+    font-family: 'Syncopate', sans-serif; 
+    font-size: 3rem; 
+    text-align: center; 
+    margin-bottom: 60px; 
+    color: var(--accent); 
+}
+
+.services-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+}
+
+.service-card {
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 15px; 
+    cursor: pointer;
+    border: 1px solid var(--glass-border);
+    /* NEW: Forces the card to stay tall even if the image breaks */
+    min-height: 350px; 
+    background-color: #111; /* Gives a background color if the image is missing */
+}
+
+.service-card img { 
+    display: block; /* NEW: Prevents inline bottom-spacing bugs */
+    width: 100%; 
+    height: 350px; 
+    object-fit: cover; 
+    transition: 0.5s; 
+    filter: grayscale(100%); 
+}
+
+.service-card:hover img { 
+    filter: grayscale(0%); 
+    transform: scale(1.1); 
+}
+
+.card-text { 
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    /* Adding box-sizing ensures padding doesn't push the text outside the card */
+    box-sizing: border-box; 
+    padding: 20px; 
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%); 
+    transition: 0.5s ease;
+}
+
+.card-text h3 { 
+    font-family: 'Syncopate', sans-serif; 
+    font-size: 1.5rem; 
+    color: #ffffff;
+    margin: 0 0 5px 0;
+}
+
+.card-text p {
+    font-family: sans-serif; 
+    font-size: 0.9rem;
+    color: #cccccc;
+    line-height: 1.4;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+
+.service-card:hover .card-text p {
+    max-height: 100px; 
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 10px;
+}
+
+------------
+
+/* .leadership-section{
+    background: #ffffff;
+    padding: 50px 20px;
+} */
+
+.team-grid1{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-member1{
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 310px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.team-member1:hover{
+    transform: translateY(-8px);
+}
+
+.img-wrapper1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Colorful Name Text */
+.member-details1 h4{
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.4;
+    background: linear-gradient(90deg, #ff6600, #0066ff, #00b894);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Stylish Designation */
+.member-details1 h6{
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #222;
+    background: #f4f4f4;
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 30px;
+}
+
+/* .session-2, .session-3, .session-4, .session-6 { padding: 100px 5vw; }
+.section-title { font-family: 'Syncopate', sans-serif; font-size: 3rem; text-align: center; margin-bottom: 60px; color: var(--accent); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.service-card {
+    position: relative; overflow: hidden; border-radius: 15px; cursor: pointer;
+    border: 1px solid var(--glass-border);
+}
+.service-card img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; filter: grayscale(100%); }
+.service-card:hover img { filter: grayscale(0%); transform: scale(1.1); }
+.card-text { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, #000); }
+.card-text h3 { font-family: 'Syncopate', sans-serif; font-size: 1.5rem; } */
+
+/* Session 3: Team */
+/* .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.team-member { text-align: center; }
+.img-wrapper { overflow: hidden; border-radius: 50%; width: 150px; height: 150px; margin: 0 auto 15px auto; border: 3px solid var(--accent); }
+.img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+.img-wrapper:hover img { transform: scale(1.1); } */
+
+/* Session 3: Team Layout */
+.sub-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #ffffff;
+    margin: 40px 0 30px;
+    letter-spacing: 2px;
+}
+
+.team-grid { 
+    display: grid; 
+    gap: 30px; 
+    justify-content: center;
+}
+
+/* 4 Heads Grid (1 row of 4 on desktop) */
+.heads-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-bottom: 60px;
+}
+
+.team-grid1 { 
+    display: grid; 
+    gap: 5px; 
+    justify-content: center;
+}
+
+/* 4 Heads Grid (1 row of 4 on desktop) */
+.heads-grid1 {
+    /* Use auto-fill to create as many 220px columns as possible without stretching them */
+    grid-template-columns: repeat(auto-fill in center, 220px);
+    
+    /* This centers the entire grid horizontally (left and right) */
+    justify-content: center; 
+    
+    margin-bottom: 30px;
+}
+
+/* Squad Block styling (Glassmorphism effect) */
+.squad-block {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.squad-block:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent, #00f0ff); /* Falls back to cyan if --accent isn't defined */
+}
+
+.squad-name {
+    font-family: 'Syncopate', sans-serif;
+    color: var(--accent, #00f0ff);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+/* Squad Members Grid (3 columns on desktop, 6 total members) */
+.squad-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+
+/* Individual Member Styling */
+.team-grid1 { 
+    display: grid; 
+    gap: 100px; /* Increased gap slightly so the two heads aren't squished together */
+    justify-content: center;
+}
+
+/* 2 Heads Grid */
+.heads-grid1 {
+    /* Explicitly define exactly 2 columns, each 220px wide */
+    grid-template-columns: repeat(2, 220px); 
+    
+    /* This centers the entire grid horizontally (left and right) */
+    justify-content: center; 
+    
+    margin-bottom: 30px;
+}
+
+/* Individual Member Styling */
+.team-member1 { 
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Image Wrappers and Transitions */
+.img-wrapper1 { 
+    overflow: hidden; 
+    border-radius: 50%; 
+    margin: 0 auto 15px auto; 
+    border: 3px solid rgba(255, 255, 255, 0.2); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    position: relative; /* Fixed from "Center" to "relative" */
+}
+
+/* Larger images for the Heads */
+.head-member1 .img-wrapper1 {
+    width: 180px; 
+    height: 180px;
+}
+
+/* Standard size for Squad Members */
+.squad-grid .img-wrapper1 {
+    width: 140px;
+    height: 140px;
+}
+
+.img-wrapper1 img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease, filter 0.5s ease; 
+}
+
+/* Hover Effects */
+.team-member1:hover .img-wrapper1 { 
+    border-color: var(--accent, #00f0ff);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); 
+    transform: scale(1.05);
+}
+
+.team-member1:hover .img-wrapper1 img { 
+    transform: scale(1.15); 
+    filter: grayscale(0%);
+}
+
+/* Text Details Styling */
+.member-details1 {
+    transition: transform 0.4s ease;
+}
+
+.team-member1:hover .member-details1 {
+    transform: translateY(-5px);
+}
+
+/* Individual Member Styling */
+.team-member { 
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Image Wrappers and Transitions */
+.img-wrapper { 
+    overflow: hidden; 
+    border-radius: 50%; 
+    margin: 0 auto 15px auto; 
+    border: 3px solid rgba(255, 255, 255, 0.2); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy smooth transition */
+    position: relative;
+}
+
+/* Larger images for the Heads */
+.head-member .img-wrapper {
+    width: 180px; 
+    height: 180px;
+}
+
+/* Standard size for Squad Members */
+.squad-grid .img-wrapper {
+    width: 140px;
+    height: 140px;
+}
+
+.img-wrapper img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease, filter 0.5s ease; 
+    /* filter: grayscale(80%); */
+}
+
+/* Hover Effects */
+.team-member:hover .img-wrapper { 
+    border-color: var(--accent, #00f0ff);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); /* Glow effect */
+    transform: scale(1.05);
+}
+
+.team-member:hover .img-wrapper img { 
+    transform: scale(1.15); 
+    filter: grayscale(0%);
+}
+
+/* Text Details Styling */
+.member-details {
+    transition: transform 0.4s ease;
+}
+
+.team-member:hover .member-details {
+    transform: translateY(-5px);
+}
+
+.member-details h4 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.member-details p {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Session 4: Orbit Spirit */
+/* .spirit-wrapper { text-align: center; position: relative; height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+.spirit-name { font-family: 'Syncopate', sans-serif; font-size: 4rem; z-index: 10; text-shadow: 0 0 20px var(--accent); }
+.orbit-container { position: absolute; width: 500px; height: 500px; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.2); animation: spin 20s linear infinite; }
+.orbit-item { position: absolute; width: 100px; height: 100px; border-radius: 50%; object-fit: cover; animation: counter-spin 20s linear infinite, fadeInOut 4s ease-in-out infinite alternate; }
+.pose1 { top: -50px; left: 200px; animation-delay: 0s; }
+.pose2 { bottom: 50px; left: -20px; animation-delay: 1.5s; }
+.pose3 { bottom: 50px; right: -20px; animation-delay: 3s; } */
+/* Session 4: Orbit Spirit */
+.spirit-wrapper { 
+    text-align: center; 
+    position: relative; 
+    height: 650px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: top; 
+    justify-content: top;
+    overflow: hidden; /* Keeps movement within the section */
+}
+
+.spirit-name { 
+    font-family: 'Syncopate', sans-serif; 
+    font-size: 4rem; 
+    z-index: 10; /* Keeps text above the images */
+    text-shadow: 0 0 20px var(--accent); 
+    pointer-events: none; /* Allows clicks to pass through if needed */
+}
+
+.orbit-container { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Places images behind the spirit-name */
+}
+
+.orbit-item { 
+    position: absolute; 
+    width: 420px; 
+    height: 420px; 
+    object-fit: contain; /* Better for mascots with transparency */
+    opacity: 0;
+    /* 12s total (4s per image x 3 images) */
+    animation: cinematicFlow 6s ease-in-out infinite;
+}
+
+/* No outer borders as requested */
+.orbit-item {
+    border: none;
+    box-shadow: none;
+}
+
+/* Staggered starts */
+.pose1 { animation-delay: 0s; }
+.pose2 { animation-delay: 2s; }
+.pose3 { animation-delay: 4s; }
+
+@keyframes cinematicFlow {
+    /* 0% to 5%: Fast Entry from Right */
+    0% {
+        opacity: 0;
+        transform: translateX(400px) scale(0.6);
+        filter: blur(15px);
+    }
+    5% {
+        opacity: 1;
+        transform: translateX(0) scale(1.1);
+        filter: blur(0px);
+    }
+    
+    /* 5% to 20%: Stay in Center (The "Showcase" time) */
+    20% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0px);
+    }
+
+    /* 20% to 30%: Move Left and Blur (EXIT) */
+    /* This MUST finish before 33.3% to avoid overlap */
+    30% {
+        opacity: 0;
+        transform: translateX(-400px) scale(0.8);
+        filter: blur(20px);
+    }
+
+    /* 33% to 100%: Wait off-screen while other 2 mascots play */
+    100% {
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+}
+
+
+/* Session 5: Marquee */
+.session-5 { padding: 50px 0; background: var(--accent); color: black; transform: Popup(-2deg); width: 110vw; margin-left: -5vw;}
+.marquee-container { overflow: hidden; white-space: nowrap; width: 100%; }
+.marquee-track { display: inline-block; font-family: 'Syncopate', sans-serif; font-size: 2.5rem; font-weight: 900; }
+.track-left { animation: scrollLeft 30s linear infinite; }
+.track-right { animation: scrollRight 30s linear infinite; }
+.marquee-track span { padding-right: 50px; }
+
+/* Session 6: FAQ */
+.faq-container { max-width: 800px; margin: auto; }
+.faq-item { background: var(--glass-bg); border: 1px solid var(--glass-border); margin-bottom: 15px; border-radius: 10px; overflow: hidden; }
+.faq-item summary { padding: 20px; font-size: 1.2rem; cursor: pointer; font-family: 'Syncopate', sans-serif; outline: none; }
+.faq-content { padding: 0 20px 20px 20px; color: #ccc; }
+
+/* Session 7: Brand */
+.session-7 { height: 60vh; display: flex; align-items: center; justify-content: center; }
+.brand-massive { font-family: 'Syncopate', sans-serif; font-size: 10vw; -webkit-text-stroke: 2px var(--accent); color: transparent; text-align: center; }
+
+/* Footer */
+footer { background: #000; padding: 50px; border-top: 1px solid var(--glass-border); }
+.footer-grid { display: flex; justify-content: space-between; margin-bottom: 40px; }
+.footer-box h4 { font-family: 'Syncopate', sans-serif; color: var(--accent); margin-bottom: 15px; }
+.social-links img { width: 30px; margin-right: 15px; transition: 0.3s; }
+.social-links img:hover { transform: translateY(-5px); }
+.footer-bottom { text-align: center; border-top: 1px solid #222; padding-top: 20px; color: #666; font-size: 0.9rem; }
+
+/* Modals */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; backdrop-filter: blur(5px); }
+.modal-glass { background: #111; border: 1px solid var(--accent); width: 80%; max-width: 700px; margin: 10vh auto; padding: 40px; border-radius: 20px; position: relative; box-shadow: 0 0 50px rgba(255, 51, 102, 0.2); }
+.close-btn { position: absolute; top: 20px; right: 30px; font-size: 30px; cursor: pointer; color: var(--accent); }
+.event-table { width: 100%; border-collapse: collapse; text-align: left; }
+.event-table th, .event-table td { padding: 15px; border-bottom: 1px solid #333; }
+.event-table th { color: var(--accent); font-family: 'Syncopate', sans-serif; }
+
+/* Team Scroll CSS */
+.scroll-container { height: 300px; overflow: hidden; position: relative; margin-bottom: 20px;}
+.scroll-content { animation: scrollUp 15s linear infinite; display: flex; flex-direction: column; gap: 15px; text-align: center; font-size: 1.2rem; }
+.corner-btn { position: absolute; bottom: 20px; right: 20px; background: var(--accent); border: none; padding: 10px 20px; color: white; cursor: pointer; border-radius: 5px; font-weight: bold; }
+
+/* Keyframes */
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@keyframes spin { 100% { transform: Popup(90deg); } }
+@keyframes counter-spin { 100% { transform: Popup(-90deg); } }
+@keyframes fadeInOut { 0% { opacity: 0.2; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1.1); } }
+@keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+@keyframes scrollUp { 0% { transform: translateY(100%); } 100% { transform: translateY(-100%); } }

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-FraMe 360 | International Media Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+
+    <div class="cursor-glow"></div>
+
+    <header>
+        <div class="logo-left"><img src="Image/Vtmt logo.png" alt="Left Logo" class="nav-logo"></div>
+        <nav class="nav-glass">
+            <button onclick="scrollToSection('home')">HOME</button>
+            <button onclick="openModal('events-modal')">EVENTS<button>
+                 <img src="S1/S v feame.png" alt="icon" class="btn-icon">
+            <button onclick="openModal('team-modal')">TEAM</button>
+        </nav>
+        <div class="logo-right"><img src="S1/S v feame.png" alt="Right Logo" class="nav-logo"></div>
+          <div id="team-modal" class="modal">
+        <div class="modal-glass">
+            <span class="close-btn" onclick="closeModal('team-modal')">&times;</span>
+            <h2 style="text-align:center; color: #fff; margin-bottom:20px;">TEAM ROSTER</h2>
+            <div class="scroll-container">
+                <div class="scroll-content" id="team-scroll-content">
+                    <p>Director - Jane Doe</p><p>Editor - John Smith</p><p>VFX - Sarah Lee</p>
+                    <p>Audio - Mike Dean</p><p>Camera - Alex Ray</p><p>Lighting - Chris Tom</p>
+                    </div>
+            </div>
+            <button id="pause-btn" class="corner-btn"><i class="fas fa-pause"></i> Pause</button>
+        </div>
+    </div>
+
+    <div id="events-modal" class="modal">
+        <div class="modal-glass">
+            <span class="close-btn" onclick="closeModal('events-modal')">&times;</span>
+            <h2 style="text-align:center; color: #fff; margin-bottom:20px;">UPCOMING EVENTS</h2>
+            <table class="event-table">
+                <tr><th>EVENT NAME</th><th>DATE</th><th>LOCATION</th></tr>
+                <tr><td>Global Launch</td><td>Dec 20, 2026</td><td>New York</td></tr>
+                <tr><td>Media Summit</td><td>Jan 15, 2027</td><td>London</td></tr>
+                <tr><td>Expo 360</td><td>Mar 05, 2027</td><td>Dubai</td></tr>
+                <tr><td>Creator Awards</td><td>Apr 12, 2027</td><td>Tokyo</td></tr>
+            </table>
+        </div>
+    </div>
+    </header>
+
+    <section id="home" class="session-1 hidden-elem">
+        <div class="video-overlay"></div>
+        <video autoplay muted loop id="bg-video">
+            <source src="video/sesion 1 2 1080.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <!-- <h1 class="big-title">V-FRAME 360</h1> -->
+             <!-- <img src="S1/S v feame.png" alt="V-FRAME 360"> -->
+        </div>
+        <div class="hero-tag">#V-FraMe 360</div>
+    </section>
+<!-- 
+    <section class="session-2 hidden-elem">
+    <h2 class="section-title">WHAT WE DO</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <img src="V-frame 360 1/Image/What-Does-Videography-Mean.jpg" alt="Videography">
+            <div class="card-text">
+                <h3>Videography</h3>
+                <p>Cinematic visuals tailored to tell your unique story and captivate your audience.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="V-frame 360 1/Image/camera-photography.2e16d0ba.fill-1200x630.format-jpeg.jpg" alt="Photography">
+            <div class="card-text">
+                <h3>Photography</h3>
+                <p>Capturing breathtaking moments and raw emotions with perfect clarity and composition.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="V-frame 360 1/Image/BLOG_header-editing-tips-1030x687.webp" alt="Editing">
+            <div class="card-text">
+                <h3>Editing</h3>
+                <p>Seamless post-production, color grading, and visual effects to bring your raw footage to life.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="V-frame 360 1/Image/Dubbing-Studio-in-Delhi.webp" alt="Dubbing">
+            <div class="card-text">
+                <h3>Dubbing</h3>
+                <p>Professional voiceovers, precise lip-syncing, and crystal-clear audio mixing.</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="session-2">
+    <h2 class="section-title">WHAT WE DO</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=600&auto=format&fit=crop" alt="Videography">
+            <div class="card-text">
+                <h3>Videography</h3>
+                <p>Cinematic visuals tailored to tell your unique story and captivate your audience.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=600&auto=format&fit=crop" alt="Photography">
+            <div class="card-text">
+                <h3>Photography</h3>
+                <p>Capturing breathtaking moments and raw emotions with perfect clarity and composition.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=600&auto=format&fit=crop" alt="Editing">
+            <div class="card-text">
+                <h3>Editing</h3>
+                <p>Seamless post-production, color grading, and visual effects to bring your raw footage to life.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?q=80&w=600&auto=format&fit=crop" alt="Dubbing">
+            <div class="card-text">
+                <h3>Dubbing</h3>
+                <p>Professional voiceovers, precise lip-syncing, and crystal-clear audio mixing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- session-3 -->
+     <section class="session-3 hidden-elem">
+        <h2 class="section-title">with the blessings of</h2>
+
+
+       <!-- LEADERSHIP: THE 2 HEADS -->
+        <div class="leadership-section">
+            <!-- <h3 class="sub-title">The Directors</h3> -->
+            <!-- Updated class to match CSS -->
+            <div class="team-grid1 heads-grid1"> 
+              <!-- Head 1 -->
+                <div class="team-member1 head-member1">
+                    <div class="img-wrapper1"><img src="Image/chairman-message.png" alt="Head 1"></div>
+                    <div class="member-details1">
+                        <h4>COL. PROF. VEL. SHRI. Dr. R. RANGARAJAN</h4>
+                        <h6>FOUNDER PRESIDENT & CHAIRMAN</h6>
+                    </div>
+                </div>
+                <!-- Head 2 -->
+                <div class="team-member1 head-member1">
+                    <div class="img-wrapper1"><img src="Image/message-2.jpg" alt="Head 2"></div>
+                    <div class="member-details1">
+                        <h4>Late Dr.MRS.SAKUNTHALA RANGARAJAN</h4>
+                        <h6>FOUNDERESS PRESIDENT & VICE ASSISTANT DIRECTOR CHAIRMAN</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <section class="session-3 hidden-elem">
+        <h2 class="section-title">THE CREW</h2>
+
+        <!-- LEADERSHIP: THE 4 HEADS -->
+        <div class="leadership-section">
+            <h3 class="sub-title">The Directors</h3>
+            <div class="team-grid heads-grid">
+                <!-- Head 1 -->
+                <div class="team-member head-member">
+                    <div class="img-wrapper"><img src="head1.jpg" alt="Head 1"></div>
+                    <div class="member-details">
+                        <h4>Marcus Vance</h4>
+                        <p>Executive Director</p>
+                    </div>
+                </div>
+                <!-- Head 2 -->
+                <div class="team-member head-member">
+                    <div class="img-wrapper"><img src="head2.jpg" alt="Head 2"></div>
+                    <div class="member-details">
+                        <h4>Elena Rostova</h4>
+                        <p>Head of Cinematography</p>
+                    </div>
+                </div>
+                <!-- Head 3 -->
+                <div class="team-member head-member">
+                    <div class="img-wrapper"><img src="head3.jpg" alt="Head 3"></div>
+                    <div class="member-details">
+                        <h4>David Chen</h4>
+                        <p>Head of Post-Production</p>
+                    </div>
+                </div>
+                <!-- Head 4 -->
+                <div class="team-member head-member">
+                    <div class="img-wrapper"><img src="head4.jpg" alt="Head 4"></div>
+                    <div class="member-details">
+                        <h4>Sarah Jenkins</h4>
+                        <p>Head of Audio & Dubbing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE 4 TEAMS -->
+        <div class="squads-section">
+            <h3 class="sub-title">Production Squads</h3>
+
+            <!-- TEAM 1 -->
+            <div class="squad-block">
+                <h4 class="squad-name">Squad One</h4>
+                <div class="team-grid squad-grid">
+                    <!-- Member 1 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 1/Charukesh.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Charukesh M</h4><p>Content Writer</p>
+                        </div>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 1/Delwise Stefin.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Delwise Stefin J</h4><p>Editor</p>
+                        </div>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 1/IMG_kishendra_.jpg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>kishendra</h4><p>Videographer</p>
+                        </div>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 1/KEERTHI VASAN S 15743.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Keerthi vasan s</h4><p>Videographer</p>
+                        </div>
+                    </div>
+                    <!-- Member 5 -->
+                    <!-- <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 1/KEERTHI VASAN S 15743.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>lingesh m</h4><p>Videographer</p>
+                        </div>
+                    </div> -->
+                    <!-- Member 6 -->
+                    <!-- <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 1/Madhumitha.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Madhumitha</h4><p>Dubbing</p>
+                        </div>
+                    </div> -->
+                           <!-- Member 7 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 1/Anish_Mahendiran.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Anish Mahendiran</h4><p>Dubbing</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- TEAM 2 (Copy the structure of TEAM 1 above and paste here for Teams 2, 3, and 4) -->
+            <div class="squad-block">
+                <h4 class="squad-name">Squad Two</h4>
+                <div class="team-grid squad-grid">
+                    <!-- Member 1 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 2/Gemini_Generated_Image_6iu07v6iu07v6iu0.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Mohamed Arshid Mufees A S</h4><p>Content Writer</p>
+                        </div>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 2/Vijaya Shanthosh.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Vijaya Shanthosh G</h4><p>Videographer, Editor</p>
+                        </div>
+                    </div>
+                    <!-- Member 3 -->
+                    <!-- <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 2/Gemini_Generated_Image_6iu07v6iu07v6iu0.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Jeathesh k</h4><p>Videographer</p>
+                        </div>
+                    </div> -->
+                    <!-- Member 4 -->
+                    <!-- <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 2/Dharshini_S (VM17061).png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Dharshini S</h4><p>Videographer</p>
+                        </div>
+                    </div> -->
+                    <!-- Member 5 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 2/Akash b.Jpeg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Akash B</h4><p>Videographer</p>
+                        </div>
+                    </div>
+                    <!-- Member 6 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 2/Susan Ann Joseph.jpeg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Susan Ann Joseph</h4><p>Dubbing</p>
+                        </div>
+                    </div>
+                          <!-- Member 7 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 2/Gemini_Generated_Image_ckg86kckg86kckg8.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Mrinalini</h4><p>Dubbing</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- TEAM 3 -->
+            <div class="squad-block">
+                <h4 class="squad-name">Squad Three</h4>
+                <div class="team-grid squad-grid">
+                    <!-- Member 1 -->
+                    <!-- <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 3/Kavipriyan p vm17702.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Kavipriyan P</h4><p>Content Writer</p>
+                        </div>
+                    </div> -->
+                    <!-- Member 2 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 3/Ashick Vishal J.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Ashick Vishal J</h4><p>Editor</p>
+                        </div>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 3/haridharan N vm 17932.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Haridharan N</h4><p>Videographer</p>
+                        </div>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 3/Prajan.RB -VM.no_17187.jpg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Prajan.RB</h4><p>Videographer</p>
+                        </div>
+                    </div>
+                    <!-- Member 5 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 3/MAKESHWARAN.A -VM.no_17150.jpg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Makeshwaran.A</h4><p>Videographer</p>
+                        </div>
+                    </div>
+                    <!-- Member 6 -->
+                    <!-- <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 3/Britt Roshan.A -VM.No_17318.jpg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Britt Roshan.A</h4><p>Videographer</p>
+                        </div>
+                    </div> -->
+                          <!-- Member 7 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 3/siva sankari s.jpg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Siva Sankari</h4><p>Dubbing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEAM 4 -->
+            <div class="squad-block">
+                <h4 class="squad-name">Squad Four</h4>
+                <div class="team-grid squad-grid">
+                     <!-- Member 1 -->
+                    <!-- <div class="team-member">
+                        <div class="img-wrapper"><img src="1.jpg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Udhaya kumar R</h4><p>Content Writer</p>
+                        </div>
+                    </div> -->
+                    <!-- Member 2 -->
+                    <!-- <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 4/Gokul S - 16037.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Gokul S</h4><p>Editor</p>
+                        </div>
+                    </div> -->
+                    <!-- Member 3 -->
+                     <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 4/Image.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Parthiv</h4><p>Editor</p>
+                        </div>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 4/HEMANTH ASWIN.V - 16627.jpg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Hemanth Aswin</h4><p>Videographer/Editor</p>
+                        </div>
+                    </div>
+                    <!-- Member 5 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 4/M.A.Rahulvm.17091.png" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Raghul M.A</h4><p>Photographer</p>
+                        </div>
+                    </div>
+                    <!-- Member 6 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 4/ASHVINTH R.jpeg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>ASHVINTH R</h4><p>Videographer</p>
+                        </div>
+                    </div> 
+                           <!-- Member 7 -->
+                    <div class="team-member">
+                        <div class="img-wrapper"><img src="S1/s1/Team 4/Rehan Sahayaraj.jpg" alt="Member"></div>
+                        <div class="member-details">
+                            <h4>Rehan Sahayaraj S</h4><p>Videographer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- <section class="session-4 hidden-elem">
+        <div class="spirit-wrapper">
+            <h2 class="spirit-title">MEET OUR SPIRIT</h2>
+            <h3 class="spirit-name">Dude</h3>
+            <div class="orbit-container">
+                <img src="Image/Lion 1.png" class="orbit-item pose1">
+                <img src="Image/Lion 2.png" class="orbit-item pose2">
+                <img src="Image/Lion 3.png" class="orbit-item pose3">
+            </div>
+        </div>
+    </section> -->
+ <section class="session-4">
+    <div class="spirit-wrapper">
+        <h2 class="spirit-title" style="color: white; opacity: 0.6;">MEET OUR SPIRIT</h2>
+        <h3 class="spirit-name">V-fraMe</h3>
+        <div class="orbit-container">
+            <img src="Image/Lion 1.png" class="orbit-item pose1">
+            <img src="Image/Lion 2.png" class="orbit-item pose2">
+            <img src="Image/Lion 3.png" class="orbit-item pose3">
+        </div>
+    </div>
+</section>
+
+    <section class="session-5">
+        <div class="marquee-container">
+            <div class="marquee-track track-left">
+                <span>CREATIVE DIRECTION • VISIONARY ART • GLOBAL SCALE • PROFESSIONAL EDITING • 360 FRAME • CINEMATOGRAPHY • VEL TECH MULTI TECH • V-FRAmE 360 • MEDIA TEAM •</span>
+                <span>CREATIVE DIRECTION • VISIONARY ART • GLOBAL SCALE • PROFESSIONAL EDITING • 360 FRAME • CINEMATOGRAPHY • VEL TECH MULTI TECH • V-FRAmE 360 • MEDIA TEAM •</span>
+            </div>
+        </div>
+        <div class="marquee-container" style="margin-top: 20px;">
+            <div class="marquee-track track-right">
+                <span>OPPORTUNITY • EXPOSURE • VISIBILITY • BRANDING • ENGAGEMENT • COLLABORATION • IMPACT • INFLUENCE •</span>
+                <span>OPPORTUNITY • EXPOSURE • VISIBILITY • BRANDING • ENGAGEMENT • COLLABORATION • IMPACT • INFLUENCE •</span>
+            </div>
+        </div>
+    </section>
+<br>
+<br>
+<br>
+<br>
+    
+
+
+<section class="session-6 hidden-elem">
+    <h2 class="section-title">YOUR QUESTIONS ANSWERED</h2>
+
+    <div class="faq-container">
+
+       <details class="faq-item">
+    <summary>Who can join V-FraMe 360?</summary>
+    <div class="faq-content">
+        Students from all departments with passion for media, photography, videography, editing, or content creation can join.
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary>What activities does the media team handle?</summary>
+    <div class="faq-content">
+        We manage photography, videography, editing, dubbing, event coverage, social media promotions, and creative branding projects.
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary>Do members get hands-on experience?</summary>
+    <div class="faq-content">
+        Yes! Members gain real-time experience by covering college events, workshops, cultural programs, and technical fests.
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary>Can beginners join the media team?</summary>
+    <div class="faq-content">
+        Absolutely. Training, mentorship, and teamwork help beginners improve their creative and technical skills.
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary>What equipment does V-FraMe 360 use?</summary>
+    <div class="faq-content">
+        Our team works with professional cameras, drones, lighting setups, editing software, and audio equipment.
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary>How can we collaborate with V-FraMe 360?</summary>
+    <div class="faq-content">
+        Departments, clubs, and event organizers can contact the media team through the connect section for collaborations and event coverage.
+    </div>
+</details>
+
+    </div>
+</section>
+
+
+
+    <section class="session-7 hidden-elem">
+        <h1 class="brand-massive">V-FraMe 360</h1>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-box left">
+                <h4>LOCATION</h4>
+                <p>42, Vel Tech Road,<br>Vel Nagar, Avadi,
+                <br>Chennai, Tamilnadu, 600062</p>
+            </div>
+            <div class="footer-box center">
+                <h4>CONNECT</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/veltech_multitech1999/"><img src="S1/socialmedia logos/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@veltechMultitechofficial"><img src="S1/socialmedia logos/youtube.png" alt="YouTube"></a>
+                    <a href="https://x.com/VelMultitech99"><img src="S1/socialmedia logos/twitter.png" alt="X"></a>
+                    <a href="https://www.linkedin.com/company/109604191/admin/page-posts/published/"><img src="S1/socialmedia logos/linkedin.png" alt="Linkedin"></a>
+                    <a href="https://www.facebook.com/veltecmultitech"><img src="S1/socialmedia logos/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/v_frame_360/"><img src="S1/socialmedia logos/instagram (2).png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-box right">
+                <h4>CONTACT</h4>
+                <p>Media@veltechmultitech.org<br></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 V-FraMe 360. All Rights Reserved.
+        </div>
+    </footer>
+
+  
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
